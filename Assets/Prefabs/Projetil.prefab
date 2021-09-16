@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2479326345796356110}
   - component: {fileID: 9061911794288678654}
   - component: {fileID: 3190273031770794005}
+  - component: {fileID: -6725778812871634317}
+  - component: {fileID: -509165361847775884}
   m_Layer: 8
   m_Name: Projetil
   m_TagString: Untagged
@@ -72,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,3 +123,28 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.3
+--- !u!114 &-6725778812871634317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281194213593782001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ca8b72b1177944e8d21ac2a783ff71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempoParaSumir: 2.2
+--- !u!114 &-509165361847775884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281194213593782001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1bede1951d515e4784cb9e1e00ae48b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

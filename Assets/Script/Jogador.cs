@@ -10,6 +10,7 @@ public class Jogador : MonoBehaviour
 
     public Rigidbody2D prefabProjetil;
     public float velocidadeProjetil = 10.0f;
+    public GameObject prefabExplosao1;
 
     void Start()
     {
@@ -42,6 +43,8 @@ public class Jogador : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D outro)
     {
+        Vector3 posicao = new Vector3(0f, 0f, 0f);
+        Instantiate(prefabExplosao1, posicao, Quaternion.identity);
         Destroy(gameObject);
     }
 }
