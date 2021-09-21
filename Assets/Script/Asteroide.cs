@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Asteroide : MonoBehaviour
 {
+    public static System.Action AsteroideDestruido = null;
+    
     public Rigidbody2D meuRigidBody;
     public float velocidadeMaxima = 1.0f;
     public GameObject prefabExplosao2;
 
     public GameObject prefabAsteroideP;
+    public int quantidadeFragmentos = 3;
 
      void Start()
     {
@@ -19,11 +22,13 @@ public class Asteroide : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D outro)
     {
-        Vector3 posicao = new Vector3(0f, 0f, 0f);
-        Instantiate(prefabExplosao2, posicao, Quaternion.identity);
-        Vector3 posicao2 = transform.position;
-        Instantiate(prefabAsteroideP, posicao2, Quaternion.identity);
-        Instantiate(prefabAsteroideP, posicao2, Quaternion.identity);
+        for(int i = 0; i < quantidadeFragmentos; i++){
+            Instantiate(prefabAsteroideP, meuRigidBody.position, Quaternion.identity);
+        }
+        Instantiate(prefabExplosao2, meuRigidBody.position, Quaternion.identity);
+        if(AsteroideDestruido != null){
+            AsteroideDestruido();
+        }
         Destroy(gameObject);
         Destroy(outro.gameObject);
     }

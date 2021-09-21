@@ -4,29 +4,30 @@ using UnityEngine;
 
 public class SairOutroLado : MonoBehaviour
 {
-    int way;
-    void Start()
-    {
-        
-    }
+    const float Margem = 0.5f;
+    public Rigidbody2D meuRigidbody;
+    void Update(){
+        Camera camera = GameplayCamera.instancia.minhaCamera;
 
-    void Update()
-    {
-        
-    }
-    void OnBecameInvisible()
-    {
-        if (way == 0){
-            transform.position = new Vector2(transform.position.x, -transform.position.y);
+        var maxX = camera.orthographicSize * camera.aspect;
+        var maxY = camera.orthographicSize;
+
+        float limiteEsquerda = -maxX;
+        float limiteDireita = maxX;
+        float limiteCima = maxY;
+        float limiteBaixo = -maxY;
+
+        Vector2 pos = meuRigidbody.position;
+        if (meuRigidbody.position.x < limiteEsquerda - Margem){
+            pos.x = limiteDireita + Margem;
+        } else if (meuRigidbody.position.x > limiteDireita + Margem){
+            pos.x = limiteEsquerda - Margem;
         }
-        if (way == 1){
-            transform.position = new Vector2(transform.position.x, -transform.position.y);
+        if (meuRigidbody.position.y < limiteBaixo - Margem){
+            pos.y = limiteCima + Margem;
+        } else if (meuRigidbody.position.y > limiteCima + Margem){
+            pos.y = limiteBaixo - Margem;
         }
-        if (way == 1){
-            transform.position = new Vector2(-transform.position.x, transform.position.y);
-        }
-        if (way == 0){
-            transform.position = new Vector2(-transform.position.x, transform.position.y);
-        }
+        meuRigidbody.position = pos;
     }
 }

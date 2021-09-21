@@ -123,6 +123,7 @@ MonoBehaviour:
   velocidadeMaxima: 1
   prefabExplosao2: {fileID: 5110314651840320165, guid: 860d9a059e4de25458da10cc4c2d9682, type: 3}
   prefabAsteroideP: {fileID: 7380229996280551950, guid: 53fa2c7e10b65ee498856f283a262495, type: 3}
+  quantidadeFragmentos: 3
 --- !u!58 &-6800025513507038851
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,3 +152,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bede1951d515e4784cb9e1e00ae48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meuRigidbody: {fileID: 2582831106027506734}
